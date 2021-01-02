@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import setuptools
+from spamprotection import __version__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -10,7 +11,7 @@ with open("requirements.txt") as f:
 
 setuptools.setup(
     name="Intellivoid SPB",
-    version="0.0.1",
+    version=__version__,
     description="Unofficial SPB API Wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
