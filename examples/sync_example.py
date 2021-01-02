@@ -11,7 +11,7 @@ def main():
     status = client.check_blacklist(user)
     # check if status got a successful response
     if status.success:
-        print((text_parser(status)))
+        print(text_parser(status))
     else:
         print("Polish Cow did not Approve this!")
 
