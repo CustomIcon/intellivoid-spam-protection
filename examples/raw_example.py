@@ -1,5 +1,4 @@
 from spamprotection.sync import SPBClient
-from spamprotection.types import Blacklist
 
 # initializing the client
 client = SPBClient()
