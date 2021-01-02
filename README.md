@@ -32,3 +32,7 @@ if __name__ == "__main__":
     loop.run_until_complete(main())
     loop.close()
 ```
+
+## Examples
+
+All Examples are in [Examples Directory](https://github.com/pokurt/intellivoid-spam-protection/tree/master/examples)
