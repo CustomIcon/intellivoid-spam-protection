@@ -1,4 +1,3 @@
-# Fix types into it's path
 # raise a valid error at HostDownError
 # Damn Docstrings
 # understand why the heck it freazes on wrong user id or username on python3.7

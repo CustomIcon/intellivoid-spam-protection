@@ -1,9 +1,10 @@
-from json import JSONDecodeError
-from typing import Union
+import requests
 
-import aiohttp
 from .errors import UnknownError
 from .types import Blacklist
+
+from json import JSONDecodeError
+from typing import Union
 
 
 class SPBClient:
@@ -14,7 +15,7 @@ class SPBClient:
     ) -> None:
         self._host = host
 
-    async def do_request(
+    def do_request(
         self,
         user_id: str,
     ):
@@ -26,14 +27,13 @@ class SPBClient:
         Returns:
             [json]: [json response of the output]
         """
-        async with aiohttp.ClientSession() as ses:
-            request = await ses.get(f"{self._host}?query={user_id}")
+        request = requests.get(f"{self._host}?query={user_id}")
         try:
-            return await request.json(), request
+            return request.json(), request
         except JSONDecodeError:
-            return await request.text(), request
+            return request.text(), request
 
-    async def raw_output(
+    def raw_output(
         self,
         user_id: Union[int, str]
     ):
@@ -46,12 +46,12 @@ class SPBClient:
             [json]: [returns json response]
         """
         try:
-            data, _ = await self.do_request(user_id)
+            data, _ = self.do_request(user_id)
             return data
         except UnknownError:
             return False
 
-    async def check_blacklist(
+    def check_blacklist(
         self,
         user_id: Union[int, str]
     ) -> Union[Blacklist, bool]:
@@ -64,9 +64,7 @@ class SPBClient:
             Union[Blacklist, bool]: [Blacklist type]
         """
         try:
-            data, _ = await self.do_request(user_id)
+            data, _ = self.do_request(user_id)
             return Blacklist(**data)
         except UnknownError:
             return False
-        except aiohttp.client_exceptions.ClientConnectorError:
-            return "Api is down at the moment"

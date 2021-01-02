@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import setuptools
+from spamprotection import __version__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -10,7 +11,7 @@ with open("requirements.txt") as f:
 
 setuptools.setup(
     name="Intellivoid SPB",
-    version="0.0.1",
+    version=__version__,
     description="Unofficial SPB API Wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -20,6 +21,7 @@ setuptools.setup(
     url="https://github.com/pokurt/intellivoid-spam-protection",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3.8",
     ],
     install_requires=dependencies,
