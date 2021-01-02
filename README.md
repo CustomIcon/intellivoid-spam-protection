@@ -23,7 +23,7 @@ async def main():
     user = input("Enter a Username or UserID to check Spam Prediction on SPB: ")
     status = await client.check_blacklist(user)
     if status.success:
-        print((await text_parser(status.private_telegram_id)))
+        print(status.private_telegram_id)
     else:
         print("Polish Cow did not Approve this!")
 
