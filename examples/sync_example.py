@@ -7,7 +7,7 @@ client = SPBClient()
 
 def main():
     # calling for status
-    user = input("Enter a Username or UserID to check Spam Prediction on SPB: ")
+    user = input("Enter a Username or UserID: ")
     status = client.check_blacklist(user)
     # check if status got a successful response
     if status.success:
@@ -17,12 +17,22 @@ def main():
 
 
 def text_parser(status: Blacklist):
-    text = "Private TelegramID: {}\n".format(status.private_telegram_id)
-    text += "Entity Type: {}\n".format(status.entity_type)
+    text = "Private TelegramID: {}\n".format(
+        status.private_telegram_id
+    )
+    text += "Entity Type: {}\n".format(
+        status.entity_type
+    )
     if status.attributes.is_blacklisted:
-        text += "Blacklist Flag: {}\n".format(status.attributes.blacklist_flag)
-        text += "Blacklist Reason: {}\n".format(status.attributes.blacklist_reason)
-    text += "Original PrivateID: {}\n".format(status.attributes.original_private_id)
+        text += "Blacklist Flag: {}\n".format(
+            status.attributes.blacklist_flag
+        )
+        text += "Blacklist Reason: {}\n".format(
+            status.attributes.blacklist_reason
+        )
+    text += "Original PrivateID: {}\n".format(
+        status.attributes.original_private_id
+    )
     if status.attributes.is_potential_spammer:
         text += "This user is a Spammer\n"
     if status.attributes.is_operator:
@@ -35,11 +45,21 @@ def text_parser(status: Blacklist):
         text += "This user is an Intellivoid Verified Account\n"
     if status.attributes.is_official:
         text += "This is an Official Account\n"
-    text += "Language: {}\n".format(status.language_prediction.language)
-    text += "Language Probability: {}\n".format(status.language_prediction.probability)
-    text += "Ham Prediction: {}\n".format(status.spam_prediction.ham_prediction)
-    text += "Spam Prediction: {}\n".format(status.spam_prediction.spam_prediction)
-    text += "Last Updated On: {}\n".format(status.last_updated)
+    text += "Language: {}\n".format(
+        status.language_prediction.language
+    )
+    text += "Language Probability: {}\n".format(
+        status.language_prediction.probability
+    )
+    text += "Ham Prediction: {}\n".format(
+        status.spam_prediction.ham_prediction
+    )
+    text += "Spam Prediction: {}\n".format(
+        status.spam_prediction.spam_prediction
+    )
+    text += "Last Updated On: {}\n".format(
+        status.last_updated
+    )
     return text
 
 

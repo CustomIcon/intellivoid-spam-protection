@@ -11,7 +11,13 @@ class SPB:
 
 
 class Blacklist(SPB):
-    def __init__(self, success: bool, response_code: int, results=dict, **kwargs):
+    def __init__(
+        self,
+        success: bool,
+        response_code: int,
+        results=dict,
+        **kwargs
+    ):
         self.success = success
         self.response_code = response_code
         try:
