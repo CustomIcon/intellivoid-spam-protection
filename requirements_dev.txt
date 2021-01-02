@@ -1,3 +1,4 @@
 aiohttp==3.7.3
 asyncio==3.4.3
 requests==2.20
+twine==3.3.0

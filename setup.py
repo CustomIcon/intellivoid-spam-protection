@@ -21,6 +21,7 @@ setuptools.setup(
     url="https://github.com/pokurt/intellivoid-spam-protection",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3.8",
     ],
     install_requires=dependencies,
