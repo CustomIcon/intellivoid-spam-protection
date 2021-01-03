@@ -13,6 +13,12 @@ class SPBClient:
         *,
         host: str = "https://api.intellivoid.net/spamprotection/v1/lookup"
     ) -> None:
+        """
+        [SPBClient]
+        
+        Args:
+            host (str): [current spam protection lookup endpoint].
+        """
         self._host = host
 
     def do_request(

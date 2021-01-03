@@ -18,7 +18,7 @@ setuptools.setup(
     license="GNU Lesser General Public License v3 (LGPLv3)",
     author="Pokurt",
     author_email="poki@pokurt.me",
-    url="https://github.com/pokurt/intellivoid-spam-protection",
+    url="https://github.com/OpenRestfulAPI/intellivoid-spam-protection",
     packages=setuptools.find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

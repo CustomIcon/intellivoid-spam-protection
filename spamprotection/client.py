@@ -12,13 +12,19 @@ class SPBClient:
         *,
         host: str = "https://api.intellivoid.net/spamprotection/v1/lookup"
     ) -> None:
+        """
+        [SPBClient]
+        
+        Args:
+            host (str): [current spam protection lookup endpoint].
+        """
         self._host = host
-
     async def do_request(
         self,
         user_id: str,
     ):
-        """[Requests to the url]
+        """
+        [Requests to the url]
 
         Args:
             user_id (str): [username or user_id can be passed into the arg]
@@ -37,7 +43,8 @@ class SPBClient:
         self,
         user_id: Union[int, str]
     ):
-        """[raw json output]
+        """
+        [raw json output]
 
         Args:
             user_id (Union[int, str]): [can pass user_id or username]
@@ -55,7 +62,8 @@ class SPBClient:
         self,
         user_id: Union[int, str]
     ) -> Union[Blacklist, bool]:
-        """[checks spb for blacklist]
+        """
+        [checks spb for blacklist]
 
         Args:
             user_id (Union[int, str]): [can pass user_id or username]
