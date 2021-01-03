@@ -1,8 +1,9 @@
 install:
 	@python3 setup.py install --user
 
-build:
+release:
 	@python3 setup.py sdist
+	@python3 setup.py sdist bdist_wheel
 
 upload:
 	@twine upload dist/*

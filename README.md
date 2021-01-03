@@ -5,7 +5,7 @@ This library handles All Requests done to https://api.intellivoid.net/spamprotec
 ## Getting Started
 - Installing the library:
  
-    `pip install git+https://github.com/OpenRestfulAPI/intellivoid-spam-protection`
+    `pip install Intellivoid-SPB`
 
 - For those who wants to try out Development Builds:
 
